@@ -1,6 +1,6 @@
 {
   "name": "autoipo-cli",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "This is a cli script to apply for ipo automatically on few clicks",
   "main": "index.js",
   "type": "module",
