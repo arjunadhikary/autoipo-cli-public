@@ -17,8 +17,8 @@ npm import --global autoipo-cli
 
 ## Home
 
-![Screenshot](./images//ss.jpg)
+![Screenshot](/images//ss.jpg)
 
 ## See List of Available Ipo and then Apply
 
-![List](./images/Screenshot%202022-10-18%20112356.jpg)
+![List](/images/Screenshot%202022-10-18%20112356.jpg)
