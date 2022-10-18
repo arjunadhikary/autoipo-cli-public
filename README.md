@@ -143,13 +143,13 @@ Project Link: [https://github.com/arjunadhikary/autoipo-cli-public](https://gith
 [npm-shield]: https://img.shields.io/npm/v/autoipo-cli?style=for-the-badge
 [github-shield]: https://img.shields.io/github/followers/arjunadhikary?style=for-the-badge
 [npm-download]:https://img.shields.io/npm/dm/autoipo-cli?style=for-the-badge
-
 [github-url]: https://github.com/arjunadhikary/
+
 [contributors-shield]: https://img.shields.io/github/contributors/arjunadhikary/autoipo-cli-public?style=for-the-badge
 [contributors-url]: https://github.com/arjunadhikary/autoipo-cli-public/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/arjunadhikary/autoipo-cli-public.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/arjunadhikary/autoipo-cli-public?style=for-the-badge
 [forks-url]: https://github.com/arjunadhikary/autoipo-cli-public/network/members
-[stars-shield]: https://img.shields.io/github/stars/arjunadhikary/autoipo-cli-public.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/arjunadhikary/autoipo-cli-public?style=for-the-badge
 [stars-url]: https://github.com/arjunadhikary/autoipo-cli-public/stargazers
 [issues-shield]: https://img.shields.io/github/issues/arjunadhikary/autoipo-cli-public.svg?style=for-the-badge
 [issues-url]: https://github.com/arjunadhikary/autoipo-cli-public/issues
