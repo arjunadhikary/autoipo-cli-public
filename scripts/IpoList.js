@@ -1,17 +1,16 @@
 import axios from 'axios';
+import chalk from 'chalk';
 import fs from 'fs';
+import { getUserFile } from '../utils/util.js';
+import applyForIpo from './applyIpo.js';
+import { loginForAuthOnly } from './AuthWithResponse.js';
 const applyIpoList = async () => {
-  const savedInfo = JSON.parse(
-    fs.readFileSync('./.store.bin', {
-      encoding: 'binary',
-    })
-  );
   //if no authorization throw error
   /**
    * @TODO handel error file no found
    */
   try {
-    if (!savedInfo) throw new Error('Authenticate first');
+    const { authToken } = getUserFile();
     var data = JSON.stringify({
       filterFieldParams: [
         {
@@ -54,7 +53,7 @@ const applyIpoList = async () => {
       headers: {
         Accept: 'application/json, text/plain, */*',
         'Accept-Language': 'en-US,en;q=0.9',
-        Authorization: savedInfo.authToken,
+        Authorization: authToken,
         Connection: 'keep-alive',
         'Content-Type': 'application/json',
         DNT: '1',
@@ -84,7 +83,43 @@ const applyIpoList = async () => {
       };
     });
   } catch (error) {
-    throw new Error(error.response.data.message + ' Authenticate First');
+    try {
+      if (error.message.includes('No file available')) {
+        throw new Error('Login First');
+      }
+      console.log('Trying to authenticated from the user file');
+      const userFile = getUserFile();
+      if (userFile) {
+        const { clientId, username, password } = userFile.authData;
+        console.log('Getting new Auth token.....');
+        const newauthToken = await loginForAuthOnly(
+          clientId,
+          username,
+          password
+        );
+        console.log(newauthToken);
+        if (newauthToken !== null) {
+          userFile.authToken = newauthToken;
+          fs.writeFileSync('.store.bin', JSON.stringify(userFile));
+          console.log('Authenticated ');
+          applyIpoList();
+        } else {
+          console.log(
+            chalk.redBright(
+              'Using this system for the first time? Press Option 1 to login first'
+            )
+          );
+          throw new Error(
+            'Using this system for the first time? Press Option 1 to login first'
+          );
+        }
+      }
+    } catch (error) {
+      if (error.response) console.log(error.response.message);
+      throw new Error(
+        'Using this system for the first time? Press Option 1 to login first'
+      );
+    }
   }
 };
 

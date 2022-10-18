@@ -18,26 +18,6 @@ const getBankDetails = async (authToken, code) => {
   });
 };
 
-const myFullDetailsWithAccount = async function (authToken, boid) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const res = await axios.get(
-        `${BASEURL}/api/meroShareView/myDetail/${boid}`,
-        {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: authToken,
-          },
-        }
-      );
-      resolve(res);
-    } catch (error) {
-      reject(error);
-    }
-  });
-};
-
 const ownDetailForBoidAndDemat = async (authToken) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -99,6 +79,11 @@ const authWithResponse = async (clientId, username, password, pincode, crn) => {
 
     finalData = {
       authToken,
+      authData: {
+        clientId,
+        username,
+        password,
+      },
       partialApplyObject: {
         customerId: bankDetails.data.id,
         accountNumber: bankDetails.data.accountNumber,
@@ -116,4 +101,14 @@ const authWithResponse = async (clientId, username, password, pincode, crn) => {
   }
 };
 
-export default authWithResponse;
+const loginForAuthOnly = async (clientId, username, password) => {
+  try {
+    const data = await auth(clientId, username, password);
+    return data.headers.authorization;
+  } catch (error) {
+    console.log(error.response.data);
+    return null;
+  }
+};
+
+export { authWithResponse, loginForAuthOnly };

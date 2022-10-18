@@ -32,6 +32,7 @@ const applyForIpo = async function (auth, data) {
     };
 
     const response = await axios(config);
+    return response.data;
   } catch (error) {
     console.log(error.response.data);
     throw new Error(error.response.data);
