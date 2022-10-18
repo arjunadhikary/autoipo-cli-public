@@ -1,9 +1,16 @@
 {
   "name": "autoipo-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "This is a cli script to apply for ipo automatically on few clicks",
   "main": "index.js",
   "type": "module",
+  "keywords": [
+    "ipo",
+    "auto",
+    "cli",
+    "nepse",
+    "meroshare"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
