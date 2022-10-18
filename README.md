@@ -19,11 +19,11 @@
   <p align="center">
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/arjunadhikary/autoipo-cli-public">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/arjunadhikary/autoipo-cli-public/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/arjunadhikary/autoipo-cli-public/issues">Request Feature</a>
   </p>
 </div>
 
