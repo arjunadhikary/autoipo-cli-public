@@ -92,9 +92,7 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     run
     ```
-![Auto Apply IPO ](https://github.com/arjunadhikary/autoipo-cli-public/blob/main/images/Screenshot%202022-10-18%20112356.jpg)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
