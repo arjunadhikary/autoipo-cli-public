@@ -1,6 +1,6 @@
 {
   "name": "autoipo-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is a cli script to apply for ipo automatically on few clicks",
   "main": "index.js",
   "type": "module",
@@ -33,5 +33,3 @@
     "url": "https://github.com/arjunadhikary/autoipo-cli-public"
   }
 }
-
-
